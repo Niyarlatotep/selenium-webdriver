@@ -1,7 +1,7 @@
 const {Builder, By, until} = require('selenium-webdriver');
 const test = require('selenium-webdriver/testing');
 
-test.describe('First selenium test', function() {
+test.describe('Logon tests', function() {
   let driver;
 
   const adminPage = 'http://10.0.9.8/litecart/admin/'; //!!!CHANGE TO LOCALHOST
@@ -12,7 +12,7 @@ test.describe('First selenium test', function() {
     driver = yield new Builder().forBrowser('chrome').build();
   });
 
-  test.it('Check title', function*() {
+  test.it('Admin logon', function*() {
     yield driver.get(adminPage);
     yield driver.findElement(By.name('username')).sendKeys(adminLogin);
     yield driver.findElement(By.name('password')).sendKeys(adminPass);
