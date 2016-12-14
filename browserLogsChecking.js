@@ -62,7 +62,7 @@ test.describe('Browser logs', function() {
 
         yield getCatalogPage();
         for (let i = yield getProductsNumber(); i>4; i--){
-            let currentProduct = yield openProduct(i);
+            yield openProduct(i);
             let currentLogs = yield getLogs();
             expect(currentLogs.length).to.equal(0, ' В логах браузера содержатся сообщения, при открытии товара из строки ' + i);
             yield getCatalogPage();
