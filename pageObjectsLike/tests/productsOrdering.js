@@ -16,7 +16,7 @@ test.describe('Product ordering', function() {
 
         for (let i = products.suite1.length; i; i--){
             let isProductRemoved = yield app.removeProductFromCart(i);
-            expect(yield isProductRemoved).to.equal(true, 'Товар не удален из списка');
+            expect(isProductRemoved).to.equal(true, 'Товар не удален из списка');
         }
     });
 
